@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPS", "JPS\JPS.csproj", "{EF2F29C5-9A59-4B68-BF63-681F67B8C822}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPO", "MPO\MPO.csproj", "{C95A47B6-D414-4F70-AF36-17CAD774C4CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF2F29C5-9A59-4B68-BF63-681F67B8C822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF2F29C5-9A59-4B68-BF63-681F67B8C822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF2F29C5-9A59-4B68-BF63-681F67B8C822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF2F29C5-9A59-4B68-BF63-681F67B8C822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C95A47B6-D414-4F70-AF36-17CAD774C4CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C95A47B6-D414-4F70-AF36-17CAD774C4CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C95A47B6-D414-4F70-AF36-17CAD774C4CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C95A47B6-D414-4F70-AF36-17CAD774C4CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
