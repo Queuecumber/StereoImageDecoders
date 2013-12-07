@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Imaging;
 
 namespace JPS
@@ -22,13 +18,13 @@ namespace JPS
         public static void DecodeJps(string jpsFileName, string leftFileName = "0.jpg", string rightFileName = "1.jpg")
         {
             // Read the input file, it will be loaded as a jpeg
-            Image jpsFile = Image.FromFile(jpsFileName);
+            var jpsFile = Image.FromFile(jpsFileName);
 
             // Create a bitmap that will hold the left half of the jps file
-            using (Bitmap left = new Bitmap(jpsFile.Width / 2, jpsFile.Height))
+            using (var left = new Bitmap(jpsFile.Width / 2, jpsFile.Height))
             {
                 // Draw the left half of the jps file onto the new bitmap
-                using (Graphics g = Graphics.FromImage(left))
+                using (var g = Graphics.FromImage(left))
                 {
                     g.DrawImage(jpsFile, new Rectangle(0, 0, left.Width, left.Height), new Rectangle(0, 0, left.Width, left.Height), GraphicsUnit.Pixel);
                 }
@@ -38,10 +34,10 @@ namespace JPS
             }
 
             // Create a bitmap that will hold the right half of the jps file
-            using (Bitmap right = new Bitmap(jpsFile.Width / 2, jpsFile.Height))
+            using (var right = new Bitmap(jpsFile.Width / 2, jpsFile.Height))
             {
                 // Draw the right half of the jps file onto the new bitmap
-                using (Graphics g = Graphics.FromImage(right))
+                using (var g = Graphics.FromImage(right))
                 {
                     g.DrawImage(jpsFile, new Rectangle(0, 0, right.Width, right.Height), new Rectangle(jpsFile.Width / 2, 0, right.Width, right.Height), GraphicsUnit.Pixel);
                 }
