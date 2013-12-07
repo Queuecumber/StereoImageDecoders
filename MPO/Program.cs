@@ -11,6 +11,11 @@ namespace MPO
         /// <summary>
         /// Decodes an MPO file into jpeg images
         /// </summary>
+        /// <remarks>
+        /// An MPO file is a multi-jpeg container that can hold any number of jpeg files. The container itself contains no 
+        /// extra data so jpeg images can be found and extracted using their start signature "0xFFD8FFE1" which represents
+        /// the first EXIF tag
+        /// </remarks>
         /// <param name="mpoFileName">The file name of the input mpo file</param>
         public static void DecodeMpo(string mpoFileName)
         {
@@ -36,15 +41,22 @@ namespace MPO
                 }
             }
 
+            // For each found index, extract the jpeg
             for (int i = 0; i < indices.Count; i++)
             {
+                // Create a temporary buffer to hold the image bytes
+                // To do this, make a buffer with length equal to the difference between the start index of this image
+                // and the start index of the next image. If there is no next image, use the end of the data instead.
                 byte[] image = null;
                 if(i + 1 == indices.Count)
                     image = new byte[mpoData.Length - indices[i]];
                 else
                     image = new byte[indices[i + 1] - indices[i]];
 
+                // Copy the image data to a temporary file
                 Array.Copy(mpoData, indices[i], image, 0, image.Length);
+
+                // Write the image data to a file
                 File.WriteAllBytes(i + ".jpg", image);
             }
         }
