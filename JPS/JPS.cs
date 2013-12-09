@@ -1,9 +1,9 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace JPS
+namespace Jps
 {
-    class Program
+    class JpsFormat
     {
         /// <summary>
         /// Decodes a JPS file in jpeg images
